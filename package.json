@@ -1,0 +1,9 @@
+{
+  "name": "nan",
+  "version": "0.1.0",
+  "description": "Get help information for a command, no matter what",
+  "global": "1",
+  "install": "install -b nan.sh ${PREFIX:-/usr/local}/bin/nan",
+  "scripts": [ "nan.sh" ]
+}
+
