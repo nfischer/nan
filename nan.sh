@@ -42,7 +42,7 @@ nan () {
   \man "${@}"    2>/dev/null               ||  # Try the man page
   help -m "${@}" 2>/dev/null | lessWrapper ||  # Try the Bash-specific `help` command for builtins
   "${@}" --help  2>/dev/null | lessWrapper ||  # Try the `--help` flag
-  "${@}" help    2>/dev/null | lessWrapper ||  # Try the `help` argument
+  ${1} help "${@:2}" 2>/dev/null | lessWrapper ||  # Try the `help` subcommand
   "${@}" -h      2>/dev/null | lessWrapper ||  # Try the `-h` flag
   {
     echo "Unable to find help information for '${*}'" >&2
